@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Splines en JavaScript</title>
+    </head>
+    <body>
+        <h2>Interpolación de splines - Implementación en JavaScript</h2>
+		<table class="noborder"><tr><td>
+		Introduzca cada uno de los nodos separados por espacios:
+		<textarea id="nodos" rows="1" cols="50"></textarea></td><td>
+        Introduzca cada uno de los valores separados por espacios:
+		<textarea id="valores" rows="1" cols="50"></textarea></td>
+		<td>Evaluar el spline en x = <input id="evaluar"></input></td></tr><tr><td>
+		Seleccione el tipo de spline: 
+		<select id="tipo">
+		<option value="sujeto">Cúbico sujeto</option>
+		<option value="not-a-knot">Cúbico not-a-knot</option>
+		<option value="natural" selected>Cúbico natural</option>
+		<option value="periodico">Cúbico periódico</option>
+		<option value="sujeto1">Cuadrático sujeto por primer nodo</option>
+		<option value="sujeto2">Cuadrático sujeto por último nodo</option>
+		<option value="periodico2">Cuadrático periódico</option>
+		</select>
+		<button onclick="runScript()">Generar</button></td><td>
+		Introduzca los datos de las derivadas:
+		<input id="derivadas"></input></td><td width=240>
+		<button onclick="evaluarSpline()">Evaluar</button> <input READONLY id="evaluado"></input>
+		</td></tr></table>
+        <table class="noborder"><tr><td>
+                    <img src="" id="gnuimg" type="image/svg+xml" width=960 height=540 class="float-right"/>
+                </td><td valign=top style="width:100%;"><textarea READONLY id="spline" rows="34" cols="36"></textarea>			
+					</td></tr></table>
+        <br clear=all>
+        <hr>
+        <script src='gnuplot_api.js'></script>
+        <script src='splines.js'></script>
+    </body>
+</html>
