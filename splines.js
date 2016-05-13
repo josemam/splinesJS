@@ -194,7 +194,7 @@ var evaluarSpline = function() {
 }
 
 var runScript = function() {
-	if (!generaSpline()) return;
+	if (gnuplot == undefined || !generaSpline()) return;
 	var input = "set terminal svg enhanced size 960,540\nset output 'out.svg'\nset xlabel 'x'\nset datafile missing 'NaN'\nset zeroaxis\nset samples 1200\n";
 	input += "plot [" + nodos[0] + ":" + nodos[nodos.length-1] + "] '-' title 'Valores' with impulses pt 1 ps 3, ";
 
